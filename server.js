@@ -3,7 +3,7 @@ const axios = require("axios");
 const app = express();
 const port = 4000;
 
-app.get("/", async (req, res) => {
+app.get("/image", async (req, res) => {
   try {
     const { link } = req.query;
     const response = await axios.get(link, { responseType: "arraybuffer" });
