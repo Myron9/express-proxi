@@ -3,7 +3,9 @@ const axios = require("axios");
 const cors = require("cors");
 
 const path = require("path");
-const { presentedImgs, getImg4Keys } = require("./config");
+
+const { getFileNameFromResponse } = require("./utils");
+const { isLinkExists, addImageLink, getImageObject } = require("./utilsDB");
 
 const app = express();
 const port = 4000;
@@ -11,17 +13,25 @@ const port = 4000;
 app.use(cors());
 app.use(express.static("public"));
 
-app.get("/image", async (req, res) => {
+app.get("/", async (req, res) => {
   try {
     const { url } = req.query;
-    if (presentedImgs.includes(url)) {
-      const filePath = path.resolve(__dirname, "public", getImg4Keys[url]);
+    const alreadyInPublic = await isLinkExists(url);
+
+    if (alreadyInPublic) {
+      const imageObj = await getImageObject();
+      const fileName = imageObj[url];
+      const filePath = path.resolve(__dirname, "public", fileName);
       res.sendFile(filePath);
       return;
     }
+
     const response = await axios.get(url, { responseType: "arraybuffer" });
-    res.setHeader("Content-Type", response.headers.get("Content-Type"));
-    res.send(response.data);
+    const fileName = getFileNameFromResponse(response);
+    const filePath = path.resolve(__dirname, "public", fileName);
+
+    await addImageLink(url, fileName, filePath, response.data);
+    res.sendFile(filePath);
   } catch {
     res.status(400).send("Bad request");
   }
