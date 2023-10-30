@@ -13,13 +13,13 @@ app.use(express.static("public"));
 
 app.get("/image", async (req, res) => {
   try {
-    const { link } = req.query;
-    if (presentedImgs.includes(link)) {
-      const filePath = path.resolve(__dirname, "public", getImg4Keys[link]);
+    const { url } = req.query;
+    if (presentedImgs.includes(url)) {
+      const filePath = path.resolve(__dirname, "public", getImg4Keys[url]);
       res.sendFile(filePath);
       return;
     }
-    const response = await axios.get(link, { responseType: "arraybuffer" });
+    const response = await axios.get(url, { responseType: "arraybuffer" });
     res.setHeader("Content-Type", response.headers.get("Content-Type"));
     res.send(response.data);
   } catch {
