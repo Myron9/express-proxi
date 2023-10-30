@@ -2,7 +2,7 @@ const express = require("express");
 const axios = require("axios");
 const cors = require("cors");
 
-const path = require("node:path");
+const path = require("path");
 const { presentedImgs, getImg4Keys } = require("./config");
 
 const app = express();
