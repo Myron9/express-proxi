@@ -1,1 +1,14 @@
-{"https://api.atlassian.com/ex/jira/206e0fe0-f329-4749-b219-995cfc598d83/rest/api/2/universal_avatar/view/type/issuetype/avatar/10316?size=medium":"03cfa3c8-efa3-46d9-a855-f904cd1a9559.svg"}
+{
+  "https://api.atlassian.com/ex/jira/206e0fe0-f329-4749-b219-995cfc598d83/rest/api/2/universal_avatar/view/type/issuetype/avatar/10316?size=medium": "subtask.svg",
+  "https://myron228.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10316?size=medium": "subtask.svg",
+  "https://myron228.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10318?size=medium": "task.svg",
+  "https://myron228.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10315?size=medium": "story.svg",
+  "https://myron228.atlassian.net/images/icons/issuetypes/epic.svg": "epic.svg",
+  "https://myron228.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10310?size=medium": "improvement.svg",
+  "https://myron228.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10303?size=medium": "bug.svg",
+  "https://myron228.atlassian.net/images/icons/priorities/highest.svg": "highest.svg",
+  "https://myron228.atlassian.net/images/icons/priorities/high.svg": "high.svg",
+  "https://myron228.atlassian.net/images/icons/priorities/medium.svg": "medium.svg",
+  "https://myron228.atlassian.net/images/icons/priorities/low.svg": "low.svg",
+  "https://myron228.atlassian.net/images/icons/priorities/lowest.svg": "lowest.svg"
+}
